@@ -6,7 +6,7 @@ Group Members: Santosh Suresh Kumar (ssureshk), Ayush Dewagan (adewagan)
 
 App Description: Users search for restaurants by city and cuisine using the Geoapify Places API, then save personal ratings and review notes to a MongoDB database.
 
-YouTube Video Link: *TODO - Add link after recording*
+YouTube Video Link: https://youtu.be/LgnDZYBdp0w
 
 APIs: [Geoapify Geocoding API](https://www.geoapify.com/geocoding-api), [Geoapify Places API](https://www.geoapify.com/places-api)
 
