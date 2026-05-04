@@ -1,8 +1,8 @@
 # Restaurant Finder + Review Log
 
-Submitted by: Santosh Suresh Kumar (ssureshk)
+Submitted by: Santosh Sureshkumar (ssureshk)
 
-Group Members: Santosh Suresh Kumar (ssureshk), Ayush Dewagan (adewagan)
+Group Members: Santosh Sureshkumar (ssureshk), Ayush Dewagan (adewagan)
 
 App Description: Users search for restaurants by city and cuisine using the Geoapify Places API, then save personal ratings and review notes to a MongoDB database.
 
@@ -14,4 +14,4 @@ Contact Email: adewagan@terpmail.umd.edu
 
 Deployed App Link: https://restaurantfinder-yglm.onrender.com
 
-AI Use: 1. Claude
+AI Use: 1. Claude Code/Antigravity
