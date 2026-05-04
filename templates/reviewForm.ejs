@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Review - Restaurant Finder</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><span>🍽️</span> RestaurantFinder</a>
+            <div class="nav-links">
+                <a href="/">Search</a>
+                <a href="/reviews">My Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Write a Review</h1>
+            <p>Share your experience at this restaurant</p>
+        </div>
+
+        <div class="review-form-container">
+            <div class="restaurant-info">
+                <div class="icon">🏪</div>
+                <div>
+                    <h3><%= restaurantName %></h3>
+                    <p><%= restaurantAddress %></p>
+                </div>
+            </div>
+
+            <% if (error) { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+
+            <form class="search-form" action="/reviews" method="POST" id="reviewForm">
+                <h2>⭐ Your Review</h2>
+
+                <input type="hidden" name="restaurantName" value="<%= restaurantName %>">
+                <input type="hidden" name="restaurantAddress" value="<%= restaurantAddress %>">
+                <input type="hidden" name="city" value="<%= city %>">
+                <input type="hidden" name="cuisine" value="<%= cuisine %>">
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="5 stars">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars">★</label>
+                        <input type="radio" id="star3" name="rating" value="3" checked>
+                        <label for="star3" title="3 stars">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star">★</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes / Comments</label>
+                    <textarea id="notes" name="notes" placeholder="How was the food? Service? Atmosphere?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submitReviewBtn">Submit Review</button>
+            </form>
+
+            <div style="margin-top: 1rem; text-align: center;">
+                <a href="/" class="btn btn-secondary">← Back to Search</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

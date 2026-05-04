@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Restaurant Finder</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><span>🍽️</span> RestaurantFinder</a>
+            <div class="nav-links">
+                <a href="/">Search</a>
+                <a href="/reviews">My Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Search Results</h1>
+            <p>Restaurants near <strong><%= city %></strong><% if (cuisine && cuisine !== "any") { %> — <%= cuisine %> cuisine<% } %></p>
+        </div>
+
+        <% if (error) { %>
+            <div class="error-message"><%= error %></div>
+        <% } %>
+
+        <% if (restaurants.length > 0) { %>
+            <div class="results-header">
+                <h2>Found Restaurants</h2>
+                <span class="badge"><%= restaurants.length %> results</span>
+            </div>
+
+            <div class="restaurant-grid">
+                <% restaurants.forEach(function(r) { %>
+                    <div class="restaurant-card">
+                        <div class="card-header">
+                            <h3><%= r.name %></h3>
+                            <span class="category-tag"><%= r.category %></span>
+                        </div>
+                        <div class="address">📍 <%= r.address %></div>
+                        <div class="card-actions">
+                            <a href="/reviews/new?name=<%= encodeURIComponent(r.name) %>&address=<%= encodeURIComponent(r.address) %>&city=<%= encodeURIComponent(city) %>&cuisine=<%= encodeURIComponent(cuisine) %>"
+                               class="btn btn-primary" style="width: 100%;">
+                                ✍️ Write Review
+                            </a>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else if (!error) { %>
+            <div class="empty-state">
+                <div class="icon">🔍</div>
+                <h3>No restaurants found</h3>
+                <p>Try a different city or cuisine type.</p>
+                <a href="/" class="btn btn-secondary">Back to Search</a>
+            </div>
+        <% } %>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="/" class="btn btn-secondary">← New Search</a>
+        </div>
+    </div>
+</body>
+</html>

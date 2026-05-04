@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Saved - Restaurant Finder</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><span>🍽️</span> RestaurantFinder</a>
+            <div class="nav-links">
+                <a href="/">Search</a>
+                <a href="/reviews">My Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="confirmation">
+            <div class="checkmark">✅</div>
+            <h2>Review Saved!</h2>
+            <p>Your review has been saved to the database.</p>
+
+            <div class="review-summary">
+                <h3 style="color: #ffffff; margin-bottom: 0.75rem;"><%= review.restaurantName %></h3>
+                <div class="stars-display" style="margin-bottom: 0.5rem;">
+                    <% for (let i = 1; i <= 5; i++) { %>
+                        <% if (i <= review.rating) { %>★<% } else { %><span class="empty">★</span><% } %>
+                    <% } %>
+                </div>
+                <% if (review.city) { %>
+                    <div class="meta-tag" style="margin-bottom: 0.25rem;">📍 <%= review.city %></div>
+                <% } %>
+                <% if (review.cuisine && review.cuisine !== "any") { %>
+                    <div class="meta-tag" style="margin-bottom: 0.5rem;">🍴 <%= review.cuisine %></div>
+                <% } %>
+                <% if (review.notes) { %>
+                    <div class="review-notes"><%= review.notes %></div>
+                <% } %>
+            </div>
+
+            <div class="actions">
+                <a href="/" class="btn btn-primary">🔍 Search More</a>
+                <a href="/reviews" class="btn btn-secondary">📖 View All Reviews</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

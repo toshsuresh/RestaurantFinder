@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find restaurants in any city and save your personal reviews">
+    <title>Restaurant Finder + Review Log</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><span>🍽️</span> RestaurantFinder</a>
+            <div class="nav-links">
+                <a href="/">Search</a>
+                <a href="/reviews">My Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Find Your Next <span class="accent">Favorite Spot</span></h1>
+        <p>Search restaurants in any city, read the details, and save your personal reviews.</p>
+    </div>
+
+    <div class="container">
+        <form class="search-form" action="/api/results" method="GET" id="searchForm">
+            <h2>🔍 Search Restaurants</h2>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="e.g. College Park, MD" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cuisine">Cuisine Type</label>
+                <select id="cuisine" name="cuisine">
+                    <option value="any">Any Cuisine</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Indian">Indian</option>
+                    <option value="American">American</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="searchBtn">Search Restaurants</button>
+        </form>
+    </div>
+</body>
+</html>
