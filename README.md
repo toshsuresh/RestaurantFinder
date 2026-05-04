@@ -12,6 +12,6 @@ APIs: [Geoapify Geocoding API](https://www.geoapify.com/geocoding-api), [Geoapif
 
 Contact Email: adewagan@terpmail.umd.edu
 
-Deployed App Link: https://resterauntfinder.onrender.com
+Deployed App Link: https://restaurantfinder-yglm.onrender.com
 
-AI Use: 1. Claude Code (Gemini Antigravity)
+AI Use: 1. Claude
